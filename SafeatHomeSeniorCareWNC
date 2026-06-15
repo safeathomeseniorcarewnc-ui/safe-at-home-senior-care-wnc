@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe at Home Senior Care | Senior Home Care & Memory Care Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --forest-green: #355E3B;
+            --pale-pink: #F5E6E8;
+            --cream: #FAFAF8;
+            --dark-text: #2A2A2A;
+            --light-text: #666666;
+            --accent-green: #2D5016;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Georgia, serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            background-color: var(--cream);
+        }
+
+        header {
+            background-color: white;
+            border-bottom: 2px solid var(--pale-pink);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--forest-green);
+        }
+
+        nav a {
+            color: var(--dark-text);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--forest-green);
+        }
+
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(53, 94, 59, 0.85) 0%, rgba(45, 80, 22, 0.85) 100%), 
+                        url('https://images.unsplash.com/photo-1576091160550-112173f7f869?w=1200&h=600&fit=crop') center/cover;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero .tagline {
+            font-size: 1.6rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            color: var(--pale-pink);
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--pale-pink);
+            color: var(--forest-green);
+            padding: 1.2rem 3rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--pale-pink);
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--pale-pink);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        section {
+            padding: 5rem 2rem;
+            border-top: 1px solid #E8E8E8;
+        }
+
+        section h2 {
+            font-size: 2.4rem;
+            color: var(--forest-green);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .section-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(53, 94, 59, 0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--light-text);
+        }
+
+        .experience-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--accent-green) 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(53, 94, 59, 0.2);
+        }
+
+        .certification-badge {
+            display: inline-block;
+            background-color: var(--pale-pink);
+            color: var(--forest-green);
+            padding: 0.6rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 1rem 0.5rem 1rem 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, white 0%, #FAFAF8 100%);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--forest-green);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 32px rgba(53, 94, 59, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--forest-green);
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .areas-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .mountain-image {
+            margin: 2rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(53, 94, 59, 0.15);
+        }
+
+        .mountain-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .areas-content p {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            margin-bottom: 2rem;
+        }
+
+        .service-area-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--accent-green) 100%);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            margin: 0.5rem;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(53, 94, 59, 0.2);
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, white 0%, var(--pale-pink) 100%);
+            padding: 3rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border: 2px solid var(--forest-green);
+            box-shadow: 0 8px 24px rgba(53, 94, 59, 0.1);
+        }
+
+        .contact-method {
+            margin: 2rem 0;
+        }
+
+        .contact-method label {
+            display: block;
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-method a {
+            font-size: 1.3rem;
+            color: var(--dark-text);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .contact-method a:hover {
+            color: var(--forest-green);
+        }
+
+        .contact-method p {
+            font-size: 1.3rem;
+            color: var(--dark-text);
+            font-weight: 500;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--accent-green) 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">Safe at Home Senior Care</div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#areas">Areas</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Safe at Home Senior Care</h1>
+        <div class="tagline">Senior Home Care & Memory Care Specialist</div>
+        <a href="#contact" class="cta-button">Get in Touch</a>
+    </div>
+</section>
+
+<section id="about">
+    <div class="section-content">
+        <h2>About Us</h2>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1576091160575-2173dba999ef?w=500&h=500&fit=crop" alt="Caregiver with senior">
+            </div>
+            <div class="about-text">
+                <div class="experience-badge">20+ Years of Experience</div>
+                <p>For 20+ years, I've been committed to helping seniors and families navigate the journey of aging with dignity, safety, and independence. With Teepa Snow certification in dementia care, I provide expert, compassionate in-home support throughout Western North Carolina.</p>
+                <div style="margin-top: 1.5rem;">
+                    <span class="certification-badge">✓ Teepa Snow Certified</span>
+                    <span class="certification-badge">✓ LPN Licensed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="section-content">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🧠</div>
+                <h3>Dementia Care</h3>
+                <p>Specialized care for individuals with dementia, with Teepa Snow certification in evidence-based approaches.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💙</div>
+                <h3>Alzheimer's Care</h3>
+                <p>Compassionate support for Alzheimer's patients and their families, tailored to each stage of the disease.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🤝</div>
+                <h3>Companion Care</h3>
+                <p>Meaningful social engagement and support to combat isolation and enhance quality of life.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏥</div>
+                <h3>Personal Care</h3>
+                <p>Assistance with activities of daily living while maintaining dignity and independence.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌟</div>
+                <h3>Respite Care</h3>
+                <p>Relief care for family caregivers, allowing them time to rest while their loved one receives expert support.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="areas">
+    <div class="section-content">
+        <h2>Areas We Serve</h2>
+        <div class="areas-content">
+            <p>Serving Western North Carolina</p>
+            <div class="mountain-image">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop" alt="Blue Ridge Mountains">
+            </div>
+            <div>
+                <span class="service-area-badge">Waynesville</span>
+                <span class="service-area-badge">Asheville</span>
+                <span class="service-area-badge">Black Mountain</span>
+                <span class="service-area-badge">Hendersonville</span>
+                <span class="service-area-badge">Weaverville</span>
+                <span class="service-area-badge">And Surrounding Areas</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="section-content">
+        <h2>Get in Touch</h2>
+        <div class="contact-content">
+            <p style="font-size: 1.1rem; color: var(--light-text); margin-bottom: 2rem;">For referrals or to discuss your care needs, please reach out. I'd love to help.</p>
+            <div class="contact-info">
+                <div class="contact-method">
+                    <label>📞 Phone</label>
+                    <a href="tel:8287728330">(828) 772-8330</a>
+                </div>
+                <div class="contact-method">
+                    <label>✉️ Email</label>
+                    <a href="mailto:SafeAtHomeSeniorCareWNC@gmail.com">SafeAtHomeSeniorCareWNC@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Safe at Home Senior Care. All rights reserved.</p>
+    <p style="font-size: 0.85rem; margin-top: 1rem; opacity: 0.9;">Serving Western North Carolina with Compassion and Expertise</p>
+</footer>
+
+</body>
+</html>
