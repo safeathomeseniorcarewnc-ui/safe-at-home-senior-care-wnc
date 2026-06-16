@@ -1,6 +1,4 @@
 
-Index · HTML
-Syntax highlighting has been disabled due to code size.
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -266,8 +264,6 @@ Syntax highlighting has been disabled due to code size.
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(53, 94, 59, 0.2);
             position: relative;
-            max-width: 320px;
-            margin: 0 auto;
         }
 
         .about-image::before {
@@ -336,9 +332,10 @@ Syntax highlighting has been disabled due to code size.
         }
 
         .approach-container {
-            display: block;
-            max-width: 800px;
-            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 5rem;
+            align-items: center;
         }
 
         .approach-text h3 {
@@ -450,9 +447,10 @@ Syntax highlighting has been disabled due to code size.
         }
 
         .training-container {
-            display: block;
-            max-width: 800px;
-            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 5rem;
+            align-items: center;
         }
 
         .training-text h3 {
@@ -743,6 +741,7 @@ Syntax highlighting has been disabled due to code size.
                 <p>Every senior deserves care that honors their dignity, respects their independence, and responds to their unique needs. I provide expert, evidence-based support grounded in Teepa Snow's dementia care philosophy.</p>
                 <p>Whether working with families navigating early signs of memory loss or providing intensive support for advanced dementia, my goal is always the same: to create a safe, respectful environment where seniors thrive and families have peace of mind.</p>
                 <p>I don't just deliver care. I become a trusted partner in your family's journey.</p>
+            </div>            
             </div>
         </div>
     </div>
@@ -796,6 +795,9 @@ Syntax highlighting has been disabled due to code size.
                 <p>Caring for someone with dementia requires specialized knowledge and compassion. I offer personalized training based on Teepa Snow's evidence-based dementia care approach—helping family caregivers and care professionals understand behavioral changes, master communication strategies, and provide person-centered care.</p>
                 <p>Gain the confidence, skills, and knowledge to deliver expert, dignified care for your loved one. Whether you're a family member stepping into the caregiver role or a professional seeking advanced training, I provide guidance tailored to your needs and experience level.</p>
             </div>
+            <div class="training-image">
+                <img src="https://images.unsplash.com/photo-1576091160550-112173f7f869?w=600&h=600&fit=crop" alt="Training and education">
+            </div>
         </div>
     </div>
 </section>
@@ -804,6 +806,9 @@ Syntax highlighting has been disabled due to code size.
     <div class="section-content">
         <h2>Serving Western North Carolina</h2>
         <div class="areas-content">
+            <div class="mountain-image">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&h=500&fit=crop" alt="Blue Ridge Mountains">
+            </div>
             <div class="service-area-badges">
                 <span class="service-area-badge">Waynesville</span>
                 <span class="service-area-badge">Asheville</span>
