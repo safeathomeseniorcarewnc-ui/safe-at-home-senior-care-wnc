@@ -441,6 +441,56 @@
             line-height: 1.8;
         }
 
+        .training-section {
+            background: linear-gradient(to bottom, rgba(53, 94, 59, 0.05) 0%, rgba(245, 230, 232, 0.2) 100%);
+        }
+
+        .training-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .training-text h3 {
+            font-size: 2.4rem;
+            color: var(--dark-text);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .training-text p {
+            color: var(--light-text);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.9;
+        }
+
+        .training-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(53, 94, 59, 0.15);
+            position: relative;
+        }
+
+        .training-image::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--light-green) 100%);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.4;
+            filter: blur(20px);
+        }
+
+        .training-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 18px;
+        }
+
         .areas-content {
             text-align: center;
             max-width: 900px;
@@ -602,7 +652,8 @@
             }
 
             .about-container,
-            .approach-container {
+            .approach-container,
+            .training-container {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
@@ -642,6 +693,7 @@
                 <a href="#about">About</a>
                 <a href="#approach">Approach</a>
                 <a href="#services">Services</a>
+                <a href="#training">Training</a>
                 <a href="#areas">Areas</a>
                 <a href="#contact">Contact</a>
             </nav>
@@ -690,7 +742,7 @@
                 <p>I don't just deliver care. I become a trusted partner in your family's journey.</p>
             </div>
             <div class="approach-image">
-                <img src="https://images.unsplash.com/photo-1576091160599-112173f7f869?w=600&h=600&fit=crop" alt="Caregiver with senior">
+                <img src="https://images.unsplash.com/photo-1631217b9201-a08db1700fc0?w=600&h=600&fit=crop" alt="Caregiver with senior">
             </div>
         </div>
     </div>
@@ -735,6 +787,22 @@
     </div>
 </section>
 
+<section id="training" class="training-section">
+    <div class="section-content">
+        <h2>Caregiver Training & Education</h2>
+        <div class="training-container">
+            <div class="training-text">
+                <h3>Empower Yourself to Care with Confidence</h3>
+                <p>Caring for someone with dementia requires specialized knowledge and compassion. I offer personalized training based on Teepa Snow's evidence-based dementia care approach—helping family caregivers and care professionals understand behavioral changes, master communication strategies, and provide person-centered care.</p>
+                <p>Gain the confidence, skills, and knowledge to deliver expert, dignified care for your loved one. Whether you're a family member stepping into the caregiver role or a professional seeking advanced training, I provide guidance tailored to your needs and experience level.</p>
+            </div>
+            <div class="training-image">
+                <img src="https://images.unsplash.com/photo-1576091160550-112173f7f869?w=600&h=600&fit=crop" alt="Training and education">
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="areas">
     <div class="section-content">
         <h2>Serving Western North Carolina</h2>
@@ -758,7 +826,7 @@
     <div class="section-content">
         <h2>Let's Connect</h2>
         <div class="contact-content">
-            <p style="font-size: 1.1rem; color: var(--light-text); margin-bottom: 2rem; line-height: 1.8;">Whether you're looking for referral partnerships or exploring care options for your loved one, I'm here to help. Reach out today.</p>
+            <p style="font-size: 1.1rem; color: var(--light-text); margin-bottom: 2rem; line-height: 1.8;">Whether you're looking for referral partnerships, in-home care, or caregiver training, I'm here to help. Reach out today.</p>
             <div class="contact-info">
                 <div class="contact-method">
                     <label>📞 Phone</label>
